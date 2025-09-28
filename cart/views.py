@@ -43,6 +43,7 @@ def purchase(request):
     order.total = cart_total
     order.save()
     for movie in movies_in_cart:
+        movie.decreaseStock(int(cart[str(movie.id)])) #<- GOAL: for each movie remove its quantity from stock
         item = Item()
         item.movie = movie
         item.price = movie.price
