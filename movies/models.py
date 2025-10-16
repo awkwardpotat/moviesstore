@@ -9,7 +9,6 @@ class Movie(models.Model):
     image = models.ImageField(upload_to='movie_images/') #images will be stored in movie_images
     def __str__(self):
         return str(self.id) + ' - ' + self.name #to string --> id and name
-    
 
 # Create your models here.
 class Review(models.Model):
